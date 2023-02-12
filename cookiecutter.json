@@ -9,11 +9,6 @@
         "y",
         "n"
     ],
-    "publish_to": [
-        "pypi",
-        "artifactory",
-        "none"
-    ],
     "deptry": [
         "y",
         "n"

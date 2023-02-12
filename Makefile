@@ -63,16 +63,6 @@ clean: ## clean build artifacts
 	@rm -rf .coverage
 	@rm -rf .ruff_cache
 
-.PHONY: publish
-publish: ## publish a release to pypi.
-	@echo "🚀 Publishing: Dry run."
-	@poetry config pypi-token.pypi $(PYPI_TOKEN)
-	@poetry publish --dry-run
-	@echo "🚀 Publishing."
-	@poetry publish
-
-.PHONY: build-and-publish
-build-and-publish: build publish ## Build and publish.
 
 .PHONY: docs-test
 docs-test: ## Test if documentation can be built without warnings or errors
