@@ -20,6 +20,11 @@ deptry = "^0.6.4"
 {% endif -%}
 pre-commit = "^2.20.0"
 tox = "^3.25.1"
+pylint = "2.16.1"
+
+[tool.poetry.group.datascicence.dependencies]
+pandas = "1.5.3"
+numpy = "1.24.2"
 
 {% if cookiecutter.mkdocs == 'y' -%}
 [tool.poetry.group.docs.dependencies]

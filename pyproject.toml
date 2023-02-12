@@ -29,10 +29,6 @@ deptry = "^0.6.4"
 ruff = "^0.0.235"
 pylint = "2.16.1"
 
-[tool.poetry.group.datascicence.dependencies]
-pandas = "1.5.3"
-numpy = "1.24.2"
-
 [tool.poetry.group.docs.dependencies]
 mkdocs = "^1.4.2"
 mkdocs-material = "^8.5.10"
@@ -48,7 +44,6 @@ preview = true
 
 [tool.poetry.scripts]
 ccp = 'cookiecutter_poetry.cli:main'
-
 
 [tool.deptry]
 extend_exclude = [

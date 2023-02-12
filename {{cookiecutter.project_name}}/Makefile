@@ -21,15 +21,6 @@ test: ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
 	@poetry run pytest --doctest-modules
 
-.PHONY: build
-build: clean-build ## Build wheel file using poetry
-	@echo "🚀 Creating wheel file"
-	@poetry build
-
-.PHONY: clean-build
-clean-build: ## clean build artifacts
-	@rm -rf dist
-
 .PHONY: clean
 clean: ## clean build artifacts
 	@echo "🚀 Cleaning up build artifacts and cache files"
