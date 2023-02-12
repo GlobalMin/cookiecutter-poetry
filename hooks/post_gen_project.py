@@ -23,8 +23,3 @@ if __name__ == "__main__":
 
     if "{{cookiecutter.dockerfile}}" != "y":
         remove_file("Dockerfile")
-
-    if "{{cookiecutter.codecov}}" != "y":
-        remove_file("codecov.yaml")
-        if "{{cookiecutter.include_github_actions}}" == "y":
-            remove_file(".github/workflows/validate-codecov-config.yml")

@@ -37,15 +37,13 @@ check: ## Run code quality tools.
 	@poetry run pre-commit run -a
 	@echo "🚀 Linting with ruff"
 	@poetry run ruff hooks tests cookiecutter_poetry --config pyproject.toml
-	@echo "🚀 Static type checking: Running mypy"
-	@poetry run mypy
 	@echo "🚀 Checking for obsolete dependencies: Running deptry"
 	@poetry run deptry .
 
 .PHONY: test
 test: ## Test the code with pytest.
 	@echo "🚀 Testing code: Running pytest"
-	@poetry run pytest --cov --cov-config=pyproject.toml --cov-report=xml tests
+	@poetry run pytest tests
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
@@ -55,6 +53,15 @@ build: clean-build ## Build wheel file using poetry
 .PHONY: clean-build
 clean-build: ## clean build artifacts
 	@rm -rf dist
+
+.PHONY: clean
+clean: ## clean build artifacts
+	@echo "🚀 Cleaning up build artifacts and cache files"
+	@rm -rf dist
+	@rm -rf .mypy_cache
+	@rm -rf .pytest_cache
+	@rm -rf .coverage
+	@rm -rf .ruff_cache
 
 .PHONY: publish
 publish: ## publish a release to pypi.

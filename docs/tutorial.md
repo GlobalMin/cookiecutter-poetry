@@ -102,10 +102,6 @@ make install
 poetry shell
 ```
 
-## Step 7: Sign up to codecov.io
-
-If you enabled code coverage with codecov for your project, you should sign up with your GitHub account at [codecov.io](https://about.codecov.io/language/python/)
-
 ## Step 8: Configure your repository secrets
 
 If you want to deploy your project to Pypi or Artifactory using the

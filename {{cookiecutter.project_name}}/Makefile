@@ -11,8 +11,6 @@ check: ## Run code quality tools.
 	@poetry lock --check
 	@echo "🚀 Linting code: Running pre-commit"
 	@poetry run pre-commit run -a
-	@echo "🚀 Static type checking: Running mypy"
-	@poetry run mypy
 {%- if cookiecutter.deptry == 'y' %}
 	@echo "🚀 Checking for obsolete dependencies: Running deptry"
 	@poetry run deptry .
@@ -21,8 +19,6 @@ check: ## Run code quality tools.
 .PHONY: test
 test: ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
-{%- if cookiecutter.codecov == "y"%}
-	@poetry run pytest --cov --cov-config=pyproject.toml --cov-report=xml
 {%- else %}
 	@poetry run pytest --doctest-modules
 {%- endif%}

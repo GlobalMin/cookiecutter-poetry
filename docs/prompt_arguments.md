@@ -61,9 +61,6 @@ documentation to your project. This includes automatically parsing
 your docstrings and adding them to the documentation. Documentation
 will be deployed to the `gh-pages` branch.
 
-**codecov**
-
-`"y"` or `"n"`. Adds code coverage checks with [codecov](https://about.codecov.io/).
 
 **dockerfile**
 

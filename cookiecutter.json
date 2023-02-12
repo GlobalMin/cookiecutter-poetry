@@ -22,10 +22,6 @@
         "y",
         "n"
     ],
-    "codecov": [
-        "y",
-        "n"
-    ],
     "dockerfile": [
         "y",
         "n"
