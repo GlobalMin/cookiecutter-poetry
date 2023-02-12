@@ -2,9 +2,9 @@
 name = "cookiecutter-poetry"
 version = "0.1.0"
 description = "A python cookiecutter application to create a new python project that uses poetry to manage its dependencies."
-authors = ["Florian Maas <fpgmaas@gmail.com>"]
-repository = "https://github.com/fpgmaas/cookiecutter-poetry"
-documentation = "https://fpgmaas.github.io/cookiecutter-poetry/"
+authors = ["Jameson Stillwell"]
+repository = "https://github.com/GlobalMin/cookiecutter-poetry.git"
+documentation = ""
 readme = "README.md"
 keywords = ['cookiecutter', 'template', 'poetry']
 packages = [
@@ -17,7 +17,7 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<4.0"
+python = ">=3.10,<3.11.0"
 cookiecutter = "^2.1.1"
 
 [tool.poetry.group.dev.dependencies]
