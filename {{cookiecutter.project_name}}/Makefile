@@ -30,6 +30,12 @@ build: clean-build ## Build wheel file using poetry
 clean-build: ## clean build artifacts
 	@rm -rf dist
 
+.PHONY: clean
+clean: ## clean build artifacts
+	@echo "🚀 Cleaning up build artifacts and cache files"
+	@rm -rf dist
+	@find . -type d -iname .ipynb_checkpoints -exec rm -r {} +
+	@rm -rf .pytest_cache
 
 {%- if cookiecutter.mkdocs == "y" %}
 
