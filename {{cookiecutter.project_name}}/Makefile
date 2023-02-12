@@ -19,9 +19,7 @@ check: ## Run code quality tools.
 .PHONY: test
 test: ## Test the code with pytest
 	@echo "🚀 Testing code: Running pytest"
-{%- else %}
 	@poetry run pytest --doctest-modules
-{%- endif%}
 
 .PHONY: build
 build: clean-build ## Build wheel file using poetry
