@@ -44,7 +44,6 @@ def test_using_pytest(cookies, tmp_path):
             assert subprocess.check_call(shlex.split("poetry run make test")) == 0
 
 
-
 def test_mkdocs(cookies, tmp_path):
     with run_within_dir(tmp_path):
         result = cookies.bake(extra_context={"mkdocs": "y"})
@@ -86,5 +85,3 @@ def test_not_dockerfile(cookies, tmp_path):
         result = cookies.bake(extra_context={"dockerfile": "n"})
         assert result.exit_code == 0
         assert not os.path.isfile(f"{result.project_path}/Dockerfile")
-
-
