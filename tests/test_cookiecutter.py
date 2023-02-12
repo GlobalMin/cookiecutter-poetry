@@ -44,31 +44,6 @@ def test_using_pytest(cookies, tmp_path):
             assert subprocess.check_call(shlex.split("poetry run make test")) == 0
 
 
-def test_cicd_contains_artifactory_secrets(cookies, tmp_path):
-    with run_within_dir(tmp_path):
-        result = cookies.bake(extra_context={"publish_to": "artifactory"})
-        assert result.exit_code == 0
-        for text in ["ARTIFACTORY_URL", "ARTIFACTORY_USERNAME", "ARTIFACTORY_PASSWORD"]:
-            assert file_contains_text(f"{result.project_path}/.github/workflows/on-release-main.yml", text)
-        assert file_contains_text(f"{result.project_path}/Makefile", "build-and-publish")
-
-
-def test_cicd_contains_pypi_secrets(cookies, tmp_path):
-    with run_within_dir(tmp_path):
-        result = cookies.bake(extra_context={"publish_to": "pypi"})
-        assert result.exit_code == 0
-        assert file_contains_text(f"{result.project_path}/.github/workflows/on-release-main.yml", "PYPI_TOKEN")
-        assert file_contains_text(f"{result.project_path}/Makefile", "build-and-publish")
-
-
-def test_dont_publish(cookies, tmp_path):
-    with run_within_dir(tmp_path):
-        result = cookies.bake(extra_context={"publish_to": "none"})
-        assert result.exit_code == 0
-        assert not file_contains_text(
-            f"{result.project_path}/.github/workflows/on-release-main.yml", "make build-and-publish"
-        )
-
 
 def test_mkdocs(cookies, tmp_path):
     with run_within_dir(tmp_path):

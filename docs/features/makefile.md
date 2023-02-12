@@ -11,8 +11,6 @@ check                Lint and check code by running black, ruff, and deptry.
 test                 Test the code with pytest
 build                Build wheel file using poetry
 clean-build          clean build artifacts
-publish              publish a release to pypi.
-build-and-publish    Build and publish.
 docs-test            Test if documentation can be built without warnings or errors
 docs                 Build and serve the documentation
 ```
