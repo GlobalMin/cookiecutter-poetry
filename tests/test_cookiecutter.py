@@ -27,6 +27,10 @@ def test_bake_project(cookies):
     assert result.project_path.name == "my-project"
     assert result.project_path.is_dir()
 
+    """
+    TODO - add more tests here.
+    """
+
 
 def test_using_pytest(cookies, tmp_path):
     with run_within_dir(tmp_path):
