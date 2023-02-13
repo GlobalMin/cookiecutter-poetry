@@ -1,10 +1,33 @@
 repos:
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: "v0.0.230"
-    hooks:
-      - id: ruff
-      
   - repo: https://github.com/psf/black
     rev: "22.8.0"
     hooks:
       - id: black
+        exclude: ^{{ cookiecutter.project_name }}
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: sort-simple-yaml
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.6.1
+    hooks:
+      - id: nbqa-black
+      - id: nbqa-pyupgrade
+        args: ["--py37-plus"]
+      - id: nbqa-isort
+        args: ["--float-to-top"]
+  - repo: local
+    hooks:
+      - id: nb-clean
+        name: Check nbs are clear
+        entry: python scripts/check_nb_clean.py
+        language: python
+        additional_dependencies:
+          - nb_clean

@@ -3,7 +3,11 @@ repos:
     rev: "22.8.0"
     hooks:
       - id: black
-        exclude: ^{{ cookiecutter.project_name }}
+        exclude: >
+          (?x)^(
+             {{ cookiecutter.project_name }}|{{cookiecutter.project_name}}/docs/conf.py
+          )$
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
