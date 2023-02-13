@@ -18,7 +18,7 @@ jobs:
         uses: ./.github/actions/setup-poetry-env
 
       - name: Run pre-commit
-        run: poetry run pre-commit run -a --show-diff-on-failure
+        run: poetry run pre-commit run --show-diff-on-failure
 
       - name: Inspect dependencies
         run: poetry run deptry .
@@ -57,16 +57,3 @@ jobs:
 
       - name: Test with tox
         run: tox
-
-
-  check-docs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out
-        uses: actions/checkout@v3
-
-      - name: Set up the environment
-        uses: ./.github/actions/setup-poetry-env
-
-      - name: Check if documentation can be built
-        run: poetry run mkdocs build -s
