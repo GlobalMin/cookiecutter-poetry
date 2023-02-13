@@ -42,6 +42,16 @@ def test_using_pytest(cookies, tmp_path):
         assert result.project_path.name == "example-project"
         assert result.project_path.is_dir()
 
+        # Change into example project directory.
+        os.chdir(result.project_path)
+        os.chdir("example_project")
+
+        # Add example-project version to __init__.py.
+        with open("__init__.py", "a") as f:
+            f.write("__version__ = '0.1.0'")
+
+
+
         # Install the poetry environment and run the tests.
         with run_within_dir(str(result.project_path)):
             assert subprocess.check_call(shlex.split("poetry install --no-interaction")) == 0
