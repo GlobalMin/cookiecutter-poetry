@@ -140,7 +140,7 @@ latex_documents = [
 man_pages = [
     (master_doc, '{{ cookiecutter.project_slug }}',
      '{{ cookiecutter.project_name }} Documentation',
-     ['{{ cookiecutter.author}}'], 1)
+     ['{{ cookiecutter.author }}'], 1)
 ]
 
 
@@ -152,7 +152,7 @@ man_pages = [
 texinfo_documents = [
     (master_doc, '{{ cookiecutter.project_slug }}',
      '{{ cookiecutter.project_name }} Documentation',
-     '{{ cookiecutter.author}}',
+     '{{ cookiecutter.author }}',
      '{{ cookiecutter.project_slug }}',
      'One line description of project.',
      'Miscellaneous'),
