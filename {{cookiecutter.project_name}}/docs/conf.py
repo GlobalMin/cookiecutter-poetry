@@ -56,7 +56,8 @@ copyright = "{% now 'local', '%Y' %}, "
 # the built documents.
 #
 # The short X.Y version.
-version = {{ project_version }}
+version = '{{ cookiecutter.project_version }}'
+
 # The full version, including alpha/beta/rc tags.
 # release = {{ cookiecutter.project_slug }}
 
