@@ -1,3 +1,9 @@
+.PHONY: wipe-venv
+wipe-venv: ## wipe the virtual environment
+	@echo "🚀 Wiping virtual environment"
+	@rm -rf .venv
+
+
 .PHONY: bake
 bake: ## bake without inputs and overwrite if exists.
 	@cookiecutter --no-input . --overwrite-if-exists
@@ -62,6 +68,7 @@ clean: ## clean build artifacts
 	@rm -rf .pytest_cache
 	@rm -rf .coverage
 	@rm -rf example-project
+	@find . -type d -iname __pycache__ -exec rm -r {} +
 
 
 .PHONY: docs-test
