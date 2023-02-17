@@ -1,1 +1,7 @@
-.. include:: ../README.rst
+.. highlight:: shell
+
+============
+README
+============
+
+.. include:: ../README.md

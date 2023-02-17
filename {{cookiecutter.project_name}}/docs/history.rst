@@ -1,1 +1,5 @@
-.. include:: ../HISTORY.rst
+.. highlight:: shell
+
+============
+History
+============
