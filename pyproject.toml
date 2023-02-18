@@ -30,6 +30,7 @@ tox = "^3.25.1"
 deptry = "^0.6.4"
 ruff = "^0.0.235"
 pylint = "2.16.1"
+black = "^23.1.0"
 
 [tool.poetry.group.docs.dependencies]
 Sphinx = "6.1.3"
