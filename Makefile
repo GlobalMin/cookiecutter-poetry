@@ -12,6 +12,10 @@ bake: ## bake without inputs and overwrite if exists.
 bake-with-inputs: ## bake with inputs and overwrite if exists.
 	@cookiecutter . --overwrite-if-exists
 
+.PHONY: cookie
+cookie: ## bake without inputs and overwrite if exists.
+	@cd .. && pwd && cookiecutter --no-input --overwrite-if-exists cookiecutter-poetry && code example-project
+
 .PHONY: bake-and-test-deploy
 bake-and-test-deploy:
 	@rm -rf cookiecutter-poetry-example || true
