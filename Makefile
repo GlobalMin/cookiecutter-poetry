@@ -1,7 +1,8 @@
-.PHONY: wipe-venv
-wipe-venv: ## wipe the virtual environment
+.PHONY: wipe-all
+wipe-all: ## wipe the virtual environment
 	@echo "🚀 Wiping virtual environment"
 	@rm -rf .venv
+	@rm -rf .tox
 
 
 .PHONY: bake
