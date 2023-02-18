@@ -15,7 +15,7 @@ bake-with-inputs: ## bake with inputs and overwrite if exists.
 
 .PHONY: cookie
 cookie: ## bake without inputs and overwrite if exists.
-	@cd .. && pwd && cookiecutter --no-input --overwrite-if-exists cookiecutter-poetry && code example-project
+	@cd .. && rm -rf example-project && cookiecutter --no-input --overwrite-if-exists cookiecutter-poetry && code example-project
 
 .PHONY: bake-and-test-deploy
 bake-and-test-deploy:
